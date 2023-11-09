@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+  // service that makes a call to the backend and fetches ALL the data that is provided in the
+  // /movies/ url.
 
   baseurl = "http://127.0.0.1:8000/";
 
