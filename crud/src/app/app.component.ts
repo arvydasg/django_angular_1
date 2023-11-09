@@ -51,6 +51,18 @@ export class AppComponent {
         console.log(error);
       }
     );
-
   }
+
+  updateMovie = () => {
+    this.api.updateMovie(this.selectedMovie).subscribe(
+      data => {
+        console.log(data);
+        this.selectedMovie = data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
 }

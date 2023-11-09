@@ -26,4 +26,11 @@ export class ApiService {
     {headers: this.httpHeaders});
   }
 
+  updateMovie(movie: any): Observable<any> {
+    const body = {title: movie.title, desc: movie.desc, year: movie.year };
+
+    return this.http.put(this.baseurl + "movies/" + movie.id + '/', body,
+    {headers: this.httpHeaders});
+  }
+
 }
