@@ -58,6 +58,9 @@ export class AppComponent {
       data => {
         console.log(data);
         this.selectedMovie = data;
+
+        // After updating the movie, fetch the updated list of movies
+        this.getMovies();
       },
       error => {
         console.log(error);
