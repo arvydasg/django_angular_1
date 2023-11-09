@@ -7,10 +7,12 @@
 
 <hr>
 
-Title <input type="text" [(ngModel)]="selectedMovie.title"/><br>
-Desc <input type="text" [(ngModel)]="selectedMovie.desc"/><br>
-Year <input type="text" [(ngModel)]="selectedMovie.year"/><br>
+<p>Title <input type="text" [(ngModel)]="selectedMovie.title"/></p>
+<p>Desc <input type="text" [(ngModel)]="selectedMovie.desc"/></p>
+<p>Year <input type="text" [(ngModel)]="selectedMovie.year"/></p>
 
-<button (click)="updateMovie()">PUT</button>
-<button (click)="createMovie()">POST</button>
-<button (click)="deleteMovie()">DELETE</button>
+<hr>
+
+<button class="orange" *ngIf="selectedMovie.id != -1" (click)="updateMovie()">PUT</button>
+<button class="green" *ngIf="selectedMovie.id == -1" (click)="createMovie()">POST</button>
+<button class="red" *ngIf="selectedMovie.id != -1" (click)="deleteMovie()">DELETE</button>
