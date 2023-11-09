@@ -11,6 +11,7 @@ import { ApiService } from './api.service';
 export class AppComponent {
   // just a sample data below, in case we want to return movies list
   movies = [{ title: '' }];
+  selectedMovie;
 
   // By adding ! to the property types, you're telling TypeScript that these properties will be
   // initialized by the time they are used, even though they don't have initial values.
@@ -23,6 +24,7 @@ export class AppComponent {
   // instead of using a sample data, we use ApiService to fetch the data
   constructor(private api: ApiService) {
     this.getMovies();
+    this.selectedMovie = {id: -1, title: '', desc: '', year: '' };
   }
 
   getMovies() {
@@ -43,9 +45,7 @@ export class AppComponent {
     this.api.getOneMovie(movie.id).subscribe(
       data => {
         console.log(data);
-        this.title = data.title;
-        this.desc = data.desc;
-        this.year = data.year;
+        this.selectedMovie = data;
       },
       error => {
         console.log(error);
