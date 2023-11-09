@@ -39,12 +39,10 @@ export class AppComponent {
     );
   }
 
-
   // if we don't specify "any" type here - we get an error, it does not know the type
   movieClicked = (movie: any) => {
     this.api.getOneMovie(movie.id).subscribe(
       data => {
-        console.log(data);
         this.selectedMovie = data;
       },
       error => {
@@ -56,9 +54,6 @@ export class AppComponent {
   updateMovie = () => {
     this.api.updateMovie(this.selectedMovie).subscribe(
       data => {
-        console.log(data);
-        this.selectedMovie = data;
-
         // After updating the movie, fetch the updated list of movies
         this.getMovies();
       },
@@ -71,8 +66,19 @@ export class AppComponent {
   createMovie = () => {
     this.api.createMovie(this.selectedMovie).subscribe(
       data => {
-        console.log(data);
         this.movies.push(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  deleteMovie = () => {
+    this.api.deleteMovie(this.selectedMovie.id).subscribe(
+      data => {
+        // After deleting the movie, fetch the updated list of movies
+        this.getMovies();
       },
       error => {
         console.log(error);
