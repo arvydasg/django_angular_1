@@ -7,6 +7,7 @@ import { ApiService } from './api.service';
   styleUrls: ['./app.component.css'],
   providers: [ApiService]
 })
+
 export class AppComponent {
   movies = [{ title: 'titanic' }, { title: 'avatar' }, { title: 'FAF' }, { title: 'Test' }];
 
@@ -23,5 +24,9 @@ export class AppComponent {
         console.log(error);
       }
     );
+  }
+
+  movieClicked = () => {
+    console.log("hello");
   }
 }
