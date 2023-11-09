@@ -68,4 +68,16 @@ export class AppComponent {
     );
   }
 
+  createMovie = () => {
+    this.api.createMovie(this.selectedMovie).subscribe(
+      data => {
+        console.log(data);
+        this.movies.push(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
 }
