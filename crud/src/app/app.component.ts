@@ -29,6 +29,14 @@ export class AppComponent {
   }
   // if we don't specify "any" type here - we get an error, it does not know the type
   movieClicked = (movie: any) => {
-    console.log(movie);
+    this.api.getOneMovie(movie.id).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+
   }
 }
