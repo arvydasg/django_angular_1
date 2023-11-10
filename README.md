@@ -20,7 +20,16 @@ Did this tutorial as my first exposure to angular and drf.
 - create some movies from http://127.0.0.1:8000/admin or from drf in http://127.0.0.1:8000/.
 
 ### Setup Frontend
-- Make sure you have nvm installed. Over it install npm and node.
+- Make sure you have nvm installed. To install - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash` and then `source ~/.bashrc` and finally   `nvm -v`.
+- Over it install node latest version by `nvm install --lts` and then `nvm use --lts`, then `node -v`
+- make sure npm is installed by `npm -v`
 - Activate node with `nvm use --lts`.
-- Start angular service while in crud folder with `ng serve` command.
+- install angular by `npm install -g @angular/cli` and `ng version`
+- install project dependencies by `npm install`
+- Start angular service while in `crud` folder with `ng serve` command (or `NODE_OPTIONS="--max_old_space_size=512" ng serve`) if you are low on system resources.
 - go to http://localhost:4200/ and you should see a list of movies.
+
+
+### I agree, it's too much work to set this up
+
+I agree, it's too much work to set this up on a brand new machine. Be it raspberry pi or or just another laptop.. I will create a docker image instead tomorrow.
