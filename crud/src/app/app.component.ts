@@ -27,6 +27,18 @@ export class AppComponent {
     this.selectedMovie = {id: -1, title: '', desc: '', year: '' };
   }
 
+  // we can use this function to get the data from the database every 5 seconds (pooling)
+  // This approach is relatively simple to implement but can put load on your server,
+  // especially if you poll frequently.
+  ngOnInit() {
+    this.getMovies(); // Initial data fetch
+
+    // Periodically fetch updated data (e.g., every 5 seconds)
+    setInterval(() => {
+      this.getMovies();
+    }, 5000);
+  }
+
   getMovies() {
     this.api.getAllMovies().subscribe(
       data => {
