@@ -1,5 +1,7 @@
 # django_angular_1
 
+![Alt text](image-1.png)
+
 Did this tutorial as my first exposure to angular and drf.
 
 - Part 1 -  https://youtu.be/z_H-oxQVsPw?si=dYxyphs5cYtG0J9C
@@ -157,4 +159,11 @@ docker compose up
 ```
 
 It then runs both of those docker images at the same time. Amazing!
+
+![Alt text](image.png)
+
+
+
+
+
 
